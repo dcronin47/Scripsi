@@ -10,7 +10,7 @@
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="loadArgument()">
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
             <h1 class="title">argument</h1>
@@ -27,7 +27,7 @@
             <input class="button is-info is-light" value="add another argument" id="addArgument" onclick="addArgument()"/>
             <br><br>
 
-            <input class="button is-primary is-light" value="back" onclick="location.href='layout.html'"/>
+            <input class="button is-primary is-light" value="back" onclick="saveArguments(); location.href='layout.html'"/>
             <input class="button is-success is-light" value="save and proceed to evidence" onclick="saveArguments(); location.href='evidence.html'"/>
         </div>
         <div class="column">

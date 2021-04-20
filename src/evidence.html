@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scripsi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="loadEvidence()">
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
             <h1 class="title">evidence</h1>
-            <input class="button is-primary is-light" value="back" onclick="location.href='argument.html'"/>
-            <input class="button is-success is-light" value="proceed to desk" onclick="location.href='desk.html'"/>
+            <input class="button is-primary is-light" value="back" onclick="saveEvidence(); location.href='argument.html'"/>
+            <input class="button is-success is-light" value="proceed to desk" onclick="saveEvidence(); location.href='desk.html'"/>
         </div>
         <div class="column">
             <p class="title is-3">Your Outline</p>

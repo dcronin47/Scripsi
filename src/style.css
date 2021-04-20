@@ -9,4 +9,8 @@
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
+
+#lengthSlider {
+    width: 50%
+}
   
