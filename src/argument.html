@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scripsi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
             <h1 class="title">argument</h1>
+
+            <p>texto</p>
+            <div class="content" id="arguments">
+                <div class="columns">
+                    <div class="column has-text-centered is-three-quarters" id="1">
+                        <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <input class="button is-info is-light" value="add another argument" id="addArgument" onclick="addArgument()"/>
+            <br><br>
+
             <input class="button is-primary is-light" value="back" onclick="location.href='layout.html'"/>
-            <input class="button is-success is-light" value="proceed to evidence" onclick="location.href='evidence.html'"/>
+            <input class="button is-success is-light" value="save and proceed to evidence" onclick="saveArguments(); location.href='evidence.html'"/>
         </div>
         <div class="column">
             <p class="title is-3">Your Outline</p>
