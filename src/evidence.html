@@ -14,6 +14,27 @@
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
             <h1 class="title">evidence</h1>
+            <p>texto</p>
+            <div class="content" id="evidence">
+                <div class="columns">
+                    <div class="column has-text-centered is-three-quarters" id="1">
+                        <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="select">
+                            <select id='ev'>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input class="button is-info is-light" value="add more evidence" id="addEvidence" onclick="addEvidence()"/>
+            <br><br>
+
             <input class="button is-primary is-light" value="back" onclick="saveEvidence(); location.href='argument.html'"/>
             <input class="button is-success is-light" value="proceed to desk" onclick="saveEvidence(); location.href='desk.html'"/>
         </div>

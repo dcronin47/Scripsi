@@ -16,8 +16,8 @@
             <h1 class="title">layout</h1>
 
             <p>question 1</p>
-            <div class="select" id="format">
-                <select>
+            <div class="select">
+                <select id='topic'>
                   <option>Language, Literature, and Cultural Studies</option>
                   <option>Natural and Social Sciences</option>
                   <option>History and Fine Arts</option>
@@ -29,6 +29,9 @@
             <input type="range" min="1" max="19" value="10" class="slider" id="pageLength" onchange="updateTextInput(this.value);">
             <input class="input has-text-centered" type="text" readonly id="lengthSlider" value="">
             <br><br>
+
+            <script>document.getElementById('topic').value=localStorage.getItem('topic')</script>
+            <script>document.getElementById('pageLength').value=localStorage.getItem('length')</script>
 
             <input class="button is-primary is-light" value="back" onclick="saveLayout(); location.href='thesis.html'"/>
             <input class="button is-success is-light" value="proceed to argument" onclick="saveLayout(); location.href='argument.html'"/>
