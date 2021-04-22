@@ -17,7 +17,7 @@ function addArgument() {
     $("#arguments").append(`
         <div class="columns" id=${argumentID}>
             <div class="column has-text-centered is-three-quarters">
-                <textarea class="textarea argument" placeholder="e.g. Hello world"></textarea>
+                <textarea class="textarea argument" placeholder="Your argument"></textarea>
             </div>
             <div class="column">
                 <input class="button is-danger is-light" value="remove this argument" id="removeArgument" onclick="removeArgument(${id})"/>
@@ -40,7 +40,7 @@ function addEvidence() {
         <br>
         <div class="columns" id=${evidenceID}>
             <div class="column has-text-centered is-three-quarters">
-                <textarea class="textarea evidence" placeholder="e.g. Hello world"></textarea>
+                <textarea class="textarea evidence" placeholder="Your evidence"></textarea>
             </div>
             <div class="select">
                 <select id='ev'>
