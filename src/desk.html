@@ -27,8 +27,9 @@
             <input class="button is-primary is-light" value="back" onclick="saveDesk(); location.href='evidence.html'"/>
             <input class="button is-success is-light" value="proceed to desk" onclick="saveDesk(); location.href='outline.html'"/>
         </div>
-        <div class="column">
+        <div class="column" id='sidebar'>
             <p class="title is-3">Your Outline</p>
+            <script>fillSidebar()</script>
         </div>
     </div>
 

@@ -43,12 +43,17 @@ function addEvidence() {
                 <textarea class="textarea evidence" placeholder="e.g. Hello world"></textarea>
             </div>
             <div class="select">
-                <select id='topic'>
+                <select id='ev'>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
                 </select>
-            </div></div>
+            </div>
             <div>
                 <input class="button is-danger is-light" value="remove this evidence" id="removeEvidence" onclick="removeEvidence(${id})"/>
                 </div>
@@ -102,18 +107,19 @@ function saveArguments() {
     args = $('textarea').map(function() {
         return $.trim(this.value);
    }).get();
-   localStorage.setItem('arguments', args)
+    localStorage.setItem('arguments', args)
 }
 
 function saveEvidence() {
     evidence = $('textarea').map(function() {
         return $.trim(this.value);
-   }).get();
-   localStorage.setItem('evidence', evidence)
-}
-
-function saveDesk() {
-
+    }).get();
+    console.log(localStorage.getItem('arguments')[0])
+    localStorage.setItem('evidence', evidence)
+    links = $('select').map(function() {
+    return $.trim(this.value);
+    }).get();
+    localStorage.setItem('link', links)
 }
 
 // load functions load user's data when they return to a page
@@ -126,35 +132,32 @@ function loadThesis() {
     console.log(thesis)
 }
 
-function loadLayout() {
-
-}
-
-function loadArgument() {
-    console.log(localStorage.getItem('thesis'))
-    console.log("loadArgument")
-}
-
-function loadEvidence() {
-    console.log("load evidence")
-}
-
-function loadDesk() {
-    console.log(localStorage.getItem("arguments"))
-    for (let i=0; i<localStorage.getItem("arguments").length; i++) {
-        $('#desk').append(`
-        <p>argument</p>
-        `)
-    };
-}
+// function loadDesk() {
+//     console.log(localStorage.getItem("arguments"))
+//     for (let i=0; i<localStorage.getItem("arguments").length; i++) {
+//         $('#desk').append(`
+//         <p>argument</p>
+//         `)
+//     };
+// }
 
 function loadOutline() {
+    length = localStorage.getItem('length')
+    let citationStyle
+    console.log(localStorage.getItem('topic'))
+    if (localStorage.getItem('topic') == 'Natural and Social Sciences') {
+        citationStyle="APA"
+    } else if (localStorage.getItem('topic') == 'History and Fine Arts') {
+        citationStyle="Chicago"
+    } else if (localStorage.getItem('topic') == 'Language, Literature, and Cultural Studies') {
+        citationStyle="MLA"   
+    }
     $("#outline").append(`
-    <p>${localStorage.getItem('thesis')}</p>
-    <p>${localStorage.getItem('arguments')}</p>
-    <p>${localStorage.getItem('evidence')}</p>
-    <p>${localStorage.getItem('length')}</p>
-    <p>${localStorage.getItem('topic')}</p>
+    <p>Thesis statement: ${localStorage.getItem('thesis')}</p>
+    <p>Arguments: ${localStorage.getItem('arguments')}</p>
+    <p>Evidence: ${localStorage.getItem('evidence')}</p>
+    <p>At ${length} pages, your essay will be about ${length*250} -- ${length*300} words long</p>
+    <p>As your essay is about ${localStorage.getItem('topic')}, you should use the ${citationStyle} citation format.</p>
     `
     )
     console.log('loading outline')
@@ -163,4 +166,22 @@ function loadOutline() {
 function updateTextInput(val) {
     if (val==19) {val=val+"+"}
     document.getElementById('lengthSlider').value=val+" pages"; 
+}
+
+function fillSidebar() {
+    $('#sidebar').append('<p>Your thesis<p>')
+    console.log(localStorage.getItem('thesis'))
+    if (localStorage.getItem('thesis')!==undefined) {
+        $('#sidebar').append(localStorage.getItem('thesis'))
+    }
+    $('#sidebar').append('<br><br>')
+    $('#sidebar').append('<p>Your arguments<p>')
+    if (localStorage.getItem('arguments')!==undefined) {
+         $('#sidebar').append(localStorage.getItem('arguments'))
+    }
+    $('#sidebar').append('<br><br>')
+    $('#sidebar').append('<p>Your evidence<p>')
+    if (localStorage.getItem('evidence')!==undefined) {
+        $('#sidebar').append(localStorage.getItem('evidence'))
+    }
 }

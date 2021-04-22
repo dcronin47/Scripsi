@@ -10,16 +10,21 @@
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body onload="loadArgument()">
+<body>
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
-            <h1 class="title">argument</h1>
-
-            <p>texto</p>
+            <h1 class="title">Choosing your arguments</h1>
+            <p>Over the course of the paper, you'll develop your thesis with a few arguments.</p>
+            <br>
+            <p>Enter your arguments below -- you don't need to have the exact wording worked out for an outline, 
+                so long as you have the central focus of the argument.</p>
+            <br>
+            <p>Clicking "save these arguments" will replace all previously saved arguments.</p>
+            <br>
             <div class="content" id="arguments">
                 <div class="columns">
-                    <div class="column has-text-centered is-three-quarters" id="1">
-                        <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+                    <div class="column has-text-centered is-three-quarters" id="111">
+                        <textarea class="textarea" placeholder="Your argument"></textarea>
                     </div>
                 </div>
             </div>
@@ -28,10 +33,13 @@
             <br><br>
 
             <input class="button is-primary is-light" value="back" onclick="saveArguments(); location.href='layout.html'"/>
-            <input class="button is-success is-light" value="save and proceed to evidence" onclick="saveArguments(); location.href='evidence.html'"/>
+            <input class="button is-warning is-light" value="don't save these arguments" onclick="location.href='evidence.html'"/>
+            <input class="button is-success is-light" value="save these arguments" onclick="saveArguments(); location.href='evidence.html'"/>
+            
         </div>
-        <div class="column">
+        <div class="column" id='sidebar'>
             <p class="title is-3">Your Outline</p>
+            <script>fillSidebar()</script>
         </div>
     </div>
 </body>

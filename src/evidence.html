@@ -10,11 +10,17 @@
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body onload="loadEvidence()">
+<body>
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
-            <h1 class="title">evidence</h1>
-            <p>texto</p>
+            <h1 class="title">Organzing your evidence</h1>
+            <p>You will support your arguments with evidence -- outside sources that demonstrate your argument.</p>
+            <br>
+            <p>Enter your sources below, and use the dropdown menu to identify which argument the evidence 
+                primarily supports. It helps to have your most important sources assembled before you begin to write.</p>
+            <br>
+            <p>Clicking "save this evidence" will replace all previously saved evidence.</p>
+            <br>
             <div class="content" id="evidence">
                 <div class="columns">
                     <div class="column has-text-centered is-three-quarters" id="1">
@@ -26,6 +32,11 @@
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
                             </select>
                         </div>
                     </div>
@@ -36,10 +47,12 @@
             <br><br>
 
             <input class="button is-primary is-light" value="back" onclick="saveEvidence(); location.href='argument.html'"/>
-            <input class="button is-success is-light" value="proceed to desk" onclick="saveEvidence(); location.href='desk.html'"/>
+            <input class="button is-warning is-light" value="don't save this evidence" onclick="location.href='outline.html'"/>
+            <input class="button is-success is-light" value="save this evidence" onclick="saveEvidence(); location.href='outline.html'"/>
         </div>
-        <div class="column">
+        <div class="column" id='sidebar'>
             <p class="title is-3">Your Outline</p>
+            <script>fillSidebar()</script>
         </div>
     </div>
 </body>

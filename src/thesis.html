@@ -13,27 +13,30 @@
 <body onload="loadThesis()">
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
-            <h1 class="title">thesis</h1>
+            <h1 class="title">Composing your thesis</h1>
 
-            <p>advice for thesis</p>
-
+            <p>The thesis is the main argument of the paper. The purpose of your paper is to develop, support, and argue your thesis.</p>
+            <br>
+            <p>A good thesis should be...</p>
             <div class="content">
                 <ul>
-                    <li>tip 1</li>
-                    <li>tip 2</li>
+                    <li>a clear argument, not a question or understood fact</li>
+                    <li>specific; avoid broad generalizations </li>
+                    <li>complex enough to warrant a lengthy discussion</li>
                 </ul>
             </div>
             
             <textarea class="textarea" id="thesisTextarea" placeholder="Your thesis"></textarea>
+            <br>
 
             <script>document.getElementById("thesisTextarea").value=localStorage.getItem("thesis")</script>
 
             <input class="button is-primary is-light" value="back" onclick="saveThesis(); location.href='index.html'"/>
             <input class="button is-success is-light" value="proceed to layout" onclick="saveThesis(); location.href='layout.html'"/>
         </div>
-        <div class="column">
+        <div class="column" id='sidebar'>
             <p class="title is-3">Your Outline</p>
-            <script></script>
+            <script>fillSidebar()</script>
         </div>
     </div>
 </body>

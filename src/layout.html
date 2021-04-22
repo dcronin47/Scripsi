@@ -10,12 +10,12 @@
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body onload="loadLayout()">
+<body>
     <div class="columns">
         <div class="column has-text-centered is-three-quarters">
-            <h1 class="title">layout</h1>
+            <h1 class="title">Framing your paper</h1>
 
-            <p>question 1</p>
+            <p>In which field does the topic of your paper fall?</p>
             <div class="select">
                 <select id='topic'>
                   <option>Language, Literature, and Cultural Studies</option>
@@ -23,9 +23,9 @@
                   <option>History and Fine Arts</option>
                 </select>
             </div>
-            <br>
+            <br><br>
 
-            <p>question2</p>
+            <p>How long do you expect your paper to be?</p>
             <input type="range" min="1" max="19" value="10" class="slider" id="pageLength" onchange="updateTextInput(this.value);">
             <input class="input has-text-centered" type="text" readonly id="lengthSlider" value="">
             <br><br>
@@ -36,8 +36,9 @@
             <input class="button is-primary is-light" value="back" onclick="saveLayout(); location.href='thesis.html'"/>
             <input class="button is-success is-light" value="proceed to argument" onclick="saveLayout(); location.href='argument.html'"/>
         </div>
-        <div class="column">
+        <div class="column" id='sidebar'>
             <p class="title is-3">Your Outline</p>
+            <script>fillSidebar()</script>
         </div>
     </div>
 </body>
